@@ -60,7 +60,7 @@ class QuizFlagActivity : AppCompatActivity() {
         val index3: Int
         val index4: Int
             if (index > 127) {
-                index2 = index - (0..41).shuffled().first()
+                index2 = index - (1..41).shuffled().first()
                 index3 = index - (42..83).shuffled().first()
                 index4 = index - (84..126).shuffled().first()
             }
@@ -84,9 +84,9 @@ class QuizFlagActivity : AppCompatActivity() {
         imageView4.setImageBitmap(assetsBitmap4)
 
         imageView.setOnClickListener{Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show(); ++points; ++tryies; start()}
-        imageView2.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView3.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView4.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView2.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index2]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView3.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index3]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView4.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index4]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
 
     }
 
@@ -96,7 +96,7 @@ class QuizFlagActivity : AppCompatActivity() {
         val index3: Int
         val index4: Int
         if (index > 127) {
-            index2 = index - (0..41).shuffled().first()
+            index2 = index - (1..41).shuffled().first()
             index3 = index - (42..83).shuffled().first()
             index4 = index - (84..126).shuffled().first()
         }
@@ -118,9 +118,9 @@ class QuizFlagActivity : AppCompatActivity() {
         imageView4.setImageBitmap(assetsBitmap4)
 
         imageView2.setOnClickListener{Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show(); ++points; ++tryies; start()}
-        imageView.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView3.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView4.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index2]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView3.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index3]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView4.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index4]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
 
     }
 
@@ -130,7 +130,7 @@ class QuizFlagActivity : AppCompatActivity() {
         val index3: Int
         val index4: Int
         if (index > 127) {
-            index2 = index - (0..41).shuffled().first()
+            index2 = index - (1..41).shuffled().first()
             index3 = index - (42..83).shuffled().first()
             index4 = index - (84..126).shuffled().first()
         }
@@ -152,9 +152,9 @@ class QuizFlagActivity : AppCompatActivity() {
         imageView4.setImageBitmap(assetsBitmap4)
 
         imageView3.setOnClickListener{Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show(); ++points; ++tryies; start()}
-        imageView2.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView4.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView2.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index2]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index3]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView4.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index4]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
 
     }
 
@@ -164,7 +164,7 @@ class QuizFlagActivity : AppCompatActivity() {
         val index3: Int
         val index4: Int
         if (index > 127) {
-            index2 = index - (0..41).shuffled().first()
+            index2 = index - (1..41).shuffled().first()
             index3 = index - (42..83).shuffled().first()
             index4 = index - (84..126).shuffled().first()
         }
@@ -186,9 +186,9 @@ class QuizFlagActivity : AppCompatActivity() {
         imageView4.setImageBitmap(assetsBitmap)
 
         imageView4.setOnClickListener{Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show(); ++points; ++tryies; start()}
-        imageView2.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView3.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
-        imageView.setOnClickListener{Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView2.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index2]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView3.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index3]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
+        imageView.setOnClickListener{Toast.makeText(applicationContext, "${Flags_list().countryNames[index4]}", Toast.LENGTH_LONG).show(); ++tryies; start()}
 
     }
 

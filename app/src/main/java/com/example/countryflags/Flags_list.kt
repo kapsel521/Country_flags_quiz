@@ -304,7 +304,7 @@ class Flags_list(){
         "Central African Republic",
         "Republicofthe Congo",
         "Switzerland",
-        "Côted'Ivoire(IvoryCoast)",
+        "Côted'Ivoire (IvoryCoast)",
         "CookIslands",
         "Chile",
         "Cameroon",
