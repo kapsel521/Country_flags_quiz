@@ -1,25 +1,14 @@
 package com.example.countryflags
 
-import android.content.res.AssetManager
 import android.graphics.Bitmap
-import android.graphics.Bitmap.*
 import android.graphics.BitmapFactory
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.ImageView
 import android.widget.Toast
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableDecoderCompat
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,37 +24,36 @@ class MainActivity : AppCompatActivity() {
         }
 
         imageView.setOnClickListener{
-            if(imageView.tag == rollAnswer()){
+            if(rollAnswer() == 0){
                 Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(applicationContext, "${Flags_list().countryNames.get(rollCountry())}" , Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show()
             }
-
-
+            start()
         }
         imageView2.setOnClickListener{
-            if(imageView2.tag == rollAnswer()){
+            if(rollAnswer() == 1){
                 Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(applicationContext, "ŹLE ${rollAnswer()}", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show()
             }
-            println(Flags_list().mapFlags_list?.get(0))
+            start()
         }
         imageView3.setOnClickListener{
-            if(imageView3.tag == rollAnswer()){
+            if(rollAnswer() == 2){
                 Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(applicationContext, "ŹLE ${rollAnswer()}", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show()
             }
-            println(Flags_list().mapFlags_list?.get(0))
+            start()
         }
         imageView4.setOnClickListener{
-            if(imageView4.tag == rollAnswer()){
+            if(rollAnswer() == 3){
                 Toast.makeText(applicationContext, "Prawidłowa odpowiedź", Toast.LENGTH_LONG).show()
             }else{
-                Toast.makeText(applicationContext, "ŹLE ${rollAnswer()}", Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "Zła odpowiedź", Toast.LENGTH_LONG).show()
             }
-            println(Flags_list().mapFlags_list?.get(0))
+            start()
         }
     }
 
@@ -84,8 +72,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun imagePut(){
-        val assetsBitmap:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[rollCountry()])
-        imageView.setImageBitmap(assetsBitmap)
+        when(rollAnswer()){
+            0 -> put0image()
+            1 -> put1image()
+            2 -> put2image()
+            3 -> put3image()
+        }
     }
 
     private fun getBitmapFromAssets(fileName: String): Bitmap? {
@@ -97,6 +89,224 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun put0image(){
+        val index = rollCountry()
+        var index2 = rollCountry()
+        if (index2 == index){
+            if (index > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        var index3= rollCountry()
+        if (index3 == index){
+            if (index > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+        var index4= rollCountry()
+        if (index4 == index){
+            if (index > 100)
+                index4 -= 10
+            else
+                index4 += 10
+        }
+        if (index2 == index3){
+            if (index3 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index2 == index4){
+            if (index4 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index3 == index4){
+            if (index4 > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+
+        val assetsBitmap:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index])
+        val assetsBitmap2:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index2])
+        val assetsBitmap3:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index3])
+        val assetsBitmap4:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index4])
+        titleTextView.text = Flags_list().countryNames[index]
+
+        imageView.setImageBitmap(assetsBitmap)
+        imageView2.setImageBitmap(assetsBitmap2)
+        imageView3.setImageBitmap(assetsBitmap3)
+        imageView4.setImageBitmap(assetsBitmap4)
+    }
+
+    private fun put1image(){
+
+        val index = rollCountry()
+        var index2 = rollCountry()
+        if (index2 == index){
+            if (index > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        var index3= rollCountry()
+        if (index3 == index){
+            if (index > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+        var index4= rollCountry()
+        if (index4 == index){
+            if (index > 100)
+                index4 -= 10
+            else
+                index4 += 10
+        }
+        if (index2 == index3){
+            if (index3 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index2 == index4){
+            if (index4 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index3 == index4){
+            if (index4 > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+
+        val assetsBitmap:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index])
+        val assetsBitmap2:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index2])
+        val assetsBitmap3:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index3])
+        val assetsBitmap4:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index4])
+        titleTextView.text = Flags_list().countryNames[index]
+
+        imageView.setImageBitmap(assetsBitmap2)
+        imageView2.setImageBitmap(assetsBitmap)
+        imageView3.setImageBitmap(assetsBitmap3)
+        imageView4.setImageBitmap(assetsBitmap4)
+    }
+
+    private fun put2image(){
+
+        val index = rollCountry()
+        var index2 = rollCountry()
+        if (index2 == index){
+            if (index > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        var index3= rollCountry()
+        if (index3 == index){
+            if (index > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+        var index4= rollCountry()
+        if (index4 == index){
+            if (index > 100)
+                index4 -= 10
+            else
+                index4 += 10
+        }
+        if (index2 == index3){
+            if (index3 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index2 == index4){
+            if (index4 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index3 == index4){
+            if (index4 > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+
+        val assetsBitmap:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index])
+        val assetsBitmap2:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index2])
+        val assetsBitmap3:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index3])
+        val assetsBitmap4:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index4])
+        titleTextView.text = Flags_list().countryNames[index]
+
+        imageView.setImageBitmap(assetsBitmap3)
+        imageView2.setImageBitmap(assetsBitmap2)
+        imageView3.setImageBitmap(assetsBitmap)
+        imageView4.setImageBitmap(assetsBitmap4)
+    }
+
+    private fun put3image(){
+
+        val index = rollCountry()
+        var index2 = rollCountry()
+        if (index2 == index){
+            if (index > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        var index3= rollCountry()
+        if (index3 == index){
+            if (index > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+        var index4= rollCountry()
+        if (index4 == index){
+            if (index > 100)
+                index4 -= 10
+            else
+                index4 += 10
+        }
+        if (index2 == index3){
+            if (index3 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index2 == index4){
+            if (index4 > 100)
+                index2 -= 10
+            else
+                index2 += 10
+        }
+        if (index3 == index4){
+            if (index4 > 100)
+                index3 -= 10
+            else
+                index3 += 10
+        }
+
+        val assetsBitmap:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index])
+        val assetsBitmap2:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index2])
+        val assetsBitmap3:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index3])
+        val assetsBitmap4:Bitmap? = getBitmapFromAssets(Flags_list().fileNames[index4])
+        titleTextView.text = Flags_list().countryNames[index]
+
+        imageView.setImageBitmap(assetsBitmap4)
+        imageView2.setImageBitmap(assetsBitmap2)
+        imageView3.setImageBitmap(assetsBitmap3)
+        imageView4.setImageBitmap(assetsBitmap)
+    }
 
 }
 
